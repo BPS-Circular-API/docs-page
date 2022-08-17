@@ -99,7 +99,6 @@ curl -X 'GET' \
     "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1051:1st-parent-teacher-meeting-ptm-for-grade-x",
     "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1050:1st-parent-teacher-meeting-ptm-for-kindergarten"
 ]
-
-
+```
 
 Thanks for reading!
