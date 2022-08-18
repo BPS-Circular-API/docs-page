@@ -32,7 +32,7 @@ url = "https://raj.moonball.io/bpsapi/v1/list/"
 payload = {'category': 'ptm', "receive": "all"}
 
 request = requests.get(url, json=payload)
-print(request.request)
+print(request.text)
 ```
 
 Curl

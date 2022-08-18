@@ -1,10 +1,10 @@
 ---
 sidebar_position: 3
 ---
-# Using /geturl Endpoint
+# Using /search Endpoint
 
-In this tutorial, we will be using the /geturl endpoint to get a circular's download URL.
-The /geturl endpoint returns a string containing the download URL of the circular, taking the circular title as a parameter.
+In this tutorial, we will be using the /search endpoint to get a circular's download URL.
+The /search endpoint returns a string containing the download URL of the circular, taking the circular title as a parameter.
 
 This endpoint returns a string (or None if not found) containing the download URL of the circular.
 
@@ -22,18 +22,18 @@ Python
 ```python
 import requests
 
-url = "https://raj.moonball.io/bpsapi/v1/geturl/"
+url = "https://raj.moonball.io/bpsapi/v1/search/"
 payload = {'title': '2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII'}
 
 request = requests.get(url, json=payload)
-print(request.request)
+print(request.text)
 ```
 
 Curl
 
 ```bash
 curl -X 'GET' \
-  'https://raj.moonball.io/bpsapi/v1/geturl/' \
+  'https://raj.moonball.io/bpsapi/v1/search/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{"title": "2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII"}'
