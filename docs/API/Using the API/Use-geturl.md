@@ -3,8 +3,8 @@ sidebar_position: 3
 ---
 # Using /search Endpoint
 
-In this tutorial, we will be using the /search endpoint to get a circular's download URL.
-The /search endpoint returns a string containing the download URL of the circular, taking the circular title as a parameter.
+In this tutorial, we will be using the `/search` endpoint to get a circular's download URL.
+The `/search` endpoint returns a string containing the download URL of the circular, taking the circular title as a parameter.
 
 This endpoint returns a string (or None if not found) containing the download URL of the circular.
 

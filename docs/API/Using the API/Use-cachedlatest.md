@@ -1,17 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
-# Using /latest Endpoint
+# Using /cached-latest Endpoint
 
-In this tutorial, we will be using the /latest endpoint to get the latest
-circular in a category.
+In this tutorial, we will be using the /cached-latest endpoint to get a cached list of 
+all circulars in one Category.
 
-This endpoint returns a dictionary (for `receive` being `all`) or string (for `receive` being `titles`/`links`), containing the latest circular (of the given category)'s title and direct download URL.
+This endpoint returns a dictionary (for `receive` being `all`) or string (for `receive` being `titles`/`links`), containing the latest circular (of the given category)'s title and direct download URL like the /latest endpoint.
+But, This endpoint caches the latest circular for an hour, and returns the cached circulars if the cache is still valid. 
 
-:::tip Tip!
+This endpoint should be used when making an app that needs to get the latest circulars in one Category but does not need minute level precision.
 
-Use the `/cached-latest` endpoint if you're making an app that does not require minute level precision. It gives faster responses and reduces server load :D
+:::warning Warning!
+
+Don't use this endpoint if you're making an app that needs minute level precision. Use `/latest` instead!
 
 :::
 
@@ -33,7 +36,7 @@ Python
 ```python
 import requests
 
-url = "https://raj.moonball.io/bpsapi/v1/latest/"
+url = "https://raj.moonball.io/bpsapi/v1/cached-latest/"
 payload = {'category': 'ptm', "receive": "all"}
 
 request = requests.get(url, json=payload)
@@ -44,7 +47,7 @@ Curl
 
 ```bash
 curl -X 'GET' \
-  'https://raj.moonball.io/bpsapi/v1/latest/' \
+  'https://raj.moonball.io/bpsapi/v1/cached-latest/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
