@@ -1,7 +1,7 @@
 # Moonball Network | Documentation Page
 
-This is the documentation website for `moonball.io/docs`  
-Made by @rajdave69  
+This is the documentation website for https://raj.moonball.io/bpsapi/docs  
+Made by @rajdave69
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static Documentation website generator.
 
@@ -45,4 +45,4 @@ Just put the files in the `/build` directory on your web-server.
 
 -----------
 
-**Note** : This website is meant to be run in the `/bpsapi/docs` directory of a website and not `/`. Edit this in `docusaurus.config.js`.
+**Note** : This website is meant to be run in the `/docs` directory of a website and not `/`. Edit this in `docusaurus.config.js`.

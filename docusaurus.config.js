@@ -9,7 +9,7 @@ const config = {
   title: 'BPS Circular API | Documentation',
   tagline: 'The official documentation for the BPS Circular API',
   url: 'https://raj.moonball.io/',
-  baseUrl: '/bpsapi/docs/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

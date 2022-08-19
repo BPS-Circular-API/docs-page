@@ -28,7 +28,7 @@ Python
 ```python
 import requests
 
-url = "https://raj.moonball.io/bpsapi/v1/list/"
+url = "https://bpsapi.rajtech.io/v1/list/"
 payload = {'category': 'ptm', "receive": "all"}
 
 request = requests.get(url, json=payload)
@@ -39,7 +39,7 @@ Curl
 
 ```bash
 curl -X 'GET' \
-  'https://raj.moonball.io/bpsapi/v1/list/' \
+  'https://bpsapi.rajtech.io/v1/list/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
