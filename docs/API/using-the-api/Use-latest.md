@@ -33,7 +33,7 @@ Python
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.io/v1/latest/"
+url = "https://bpsapi.rajtech.me/v1/latest/"
 payload = {'category': 'ptm', "receive": "all"}
 
 request = requests.get(url, json=payload)
@@ -44,7 +44,7 @@ Curl
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.io/v1/latest/' \
+  'https://bpsapi.rajtech.me/v1/latest/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{

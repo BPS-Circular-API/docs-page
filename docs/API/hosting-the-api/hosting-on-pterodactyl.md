@@ -25,7 +25,7 @@ This is an advanced topic, and you should only proceed if you know what you're d
 4. Give it at least 512MB of RAM.
 5. After the server is created and the auto-installation has completed, put in the API files from [Our Repository](https://github.com/BPS-Circular-API/api) 
 6. Make sure the main API file is `main.py`
-7. Run the server, it should now be running
+7. Click the run button. The server should start up
 8. Now, You will need to route the API port using your web-server, here I will be using Apache on Ubuntu Server 20.04.
 
 `example.com-le-ssl.conf` 

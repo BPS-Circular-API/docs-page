@@ -22,7 +22,7 @@ Python
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.io/v1/search/"
+url = "https://bpsapi.rajtech.me/v1/search/"
 payload = {'title': '2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII'}
 
 request = requests.get(url, json=payload)
@@ -33,7 +33,7 @@ Curl
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.io/v1/search/' \
+  'https://bpsapi.rajtech.me/v1/search/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{"title": "2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII"}'
