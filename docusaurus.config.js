@@ -38,8 +38,7 @@ const config = {
 
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/BPS-Circular-API/docs-page',
+          // editUrl: 'https://github.com/BPS-Circular-API/docs-page/edit/main',
         },
         blog: false,
         theme: {

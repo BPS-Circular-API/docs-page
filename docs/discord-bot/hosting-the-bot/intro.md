@@ -10,7 +10,7 @@ In this section, you will learn how to get the environment ready to run the Disc
 
 You'll need a dedicated server that runs 24/7, to keep the bot up at all times.  
 
-If you don't have one, you can always use the [Ready-Made Bot](url).  
+If you don't have one, you can always use the [Ready-Made Bot](../using-the-bot/intro).  
 
 :::
 
