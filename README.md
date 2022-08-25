@@ -1,6 +1,6 @@
-# Moonball Network | Documentation Page
+# BPS Circular API | Documentation Page
 
-This is the documentation website for https://raj.moonball.io/bpsapi/docs  
+This is the documentation website for https://bpsapi.rajtech.me/docs
 Made by @rajdave69
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static Documentation website generator.
