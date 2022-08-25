@@ -76,5 +76,6 @@ curl -X 'GET' \
 ```python
 "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1095:2nd-parent-teacher-meeting-ptm-for-grades-ix-x-xii"
 ```
+---
 
 Thanks for reading!

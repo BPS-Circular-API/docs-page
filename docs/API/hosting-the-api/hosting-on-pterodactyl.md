@@ -26,7 +26,8 @@ This is an advanced topic, and you should only proceed if you know what you're d
 5. After the server is created and the auto-installation has completed, put in the API files from [Our Repository](https://github.com/BPS-Circular-API/api) 
 6. Make sure the main API file is `main.py`
 7. Click the run button. The server should start up
-8. Now, You will need to route the API port using your web-server, here I will be using Apache on Ubuntu Server 20.04.
+8. Now, You will need to route the API port using your web-server, here I will be using Apache2 on Ubuntu Server 20.04.
+9. Set the `example.com.conf` up in `/etc/apache2/sites-enabled`, and then add this apache config. Remember to replace `example.com` with your domain name.
 
 `example.com-le-ssl.conf` 
 ```apacheconf
@@ -35,18 +36,27 @@ This is an advanced topic, and you should only proceed if you know what you're d
         ServerName example.com
         DocumentRoot /var/www/example.com
         
-        <Directory "/var/www/exampl.com">
+        <Directory "/var/www/example.com">
             Require all granted
         </Directory>
         
     ProxyPass /api/ "http:<local-device-ip>:<api-port>"
     ProxyPassReverse /api/ "http:<local-device-ip>:<api-port>"
     
-    SSLCertificateFile /etc/letsencrypt/live/raj.moonball.io/fullchain.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/raj.moonball.io/privkey.pem
+    SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
     Include /etc/letsencrypt/options-ssl-apache.conf
     
-</VirtualHost>        
+    </VirtualHost>        
 </IfModule>
 
 ```
+
+10. After doing this, restart your server. It should start up normally.
+11. Now generate SSL certificates for the domain. Using the [Let's Encrypt](https://letsencrypt.org/) service. If the normal method fails, you can try to try to use the DNS challenge method. 
+12. Restart your web-server again.
+13. All should now be set up.
+
+---
+
+Thanks for reading!

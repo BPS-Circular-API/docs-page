@@ -13,3 +13,4 @@ You can either host it on Pterodactyl or run it locally.
 Hosting the API anywhere other than locally for development requires you to have basic computer-science and networking knowledge.
 
 :::
+

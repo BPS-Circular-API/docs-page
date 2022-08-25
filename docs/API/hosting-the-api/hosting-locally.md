@@ -22,3 +22,6 @@ $ uvicorn main:app
 4. There you go, The API is now locally running at `127.0.0.1`!
 
 
+---
+
+Thanks for reading!
