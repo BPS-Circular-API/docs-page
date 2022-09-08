@@ -20,7 +20,7 @@ Normal user commands are prefixed with `/circular`
 
 `/circular search [circular name]`: Look for a specific circular whose title keywords you remember. Example: Searching `mobile` finds and gives you the `Mobile Phone Usage Policy` circular, and it's details.
 
-
+`/circular remindme`: Remind you in DMs when a new circular is released.
 ## Server Administrator Commands
 
 :::tip TIP
@@ -29,7 +29,7 @@ Server administrator commands start with `/circular admin`.
 
 :::
 
-`/circular admin setup [channel]`: Subscribe a channel for the listener for when a new circular is posted.
+`/circular admin setup`: Subscribe a channel for the listener for when a new circular is posted.
 
 `/circular admin delete`: Delete the subscription for the listener for when a new circular is posted.
 

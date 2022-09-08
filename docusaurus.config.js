@@ -35,10 +35,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/', // Serve the docs at the site's root
-
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/BPS-Circular-API/docs-page/edit/main',
+          editUrl: "https://github.com/BPS-Circular-API/docs-page/edit/main/",
         },
         blog: false,
         theme: {
