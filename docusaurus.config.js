@@ -49,18 +49,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Homepage',
+        title: 'BPS Circular API',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
           {
             href: 'https://github.com/orgs/BPS-Circular-API/',
             label: 'GitHub',
