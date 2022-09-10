@@ -8,28 +8,30 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Our API was designed from the ground up to be easily used to get
+        your projects up and running quickly.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '99.99% Uptime & Low Latency',
+      Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        We provide 99.9% uptime, so you can be sure that your projects are
+        always up and running. We also have low latency, so you don't have
+          to worry about your projects being slow.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Open Source',
+      Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Our API and everything related to our project is open source, so you can contribute to it and help us
+        improve it. You can also use it for your own projects without worrying
+        about licensing.
       </>
     ),
   },
