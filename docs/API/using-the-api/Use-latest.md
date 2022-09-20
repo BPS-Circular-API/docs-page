@@ -1,13 +1,14 @@
 ---
 sidebar_position: 2
 ---
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
 
 # Using /latest Endpoint
 
-In this tutorial, we will be using the /latest endpoint to get the latest
-circular in a category.
+In this tutorial, we will be using the `/latest` endpoint to get the latest circular in a category.
 
-This endpoint returns a dictionary (for `receive` being `all`) or string (for `receive` being `titles`/`links`), containing the latest circular (of the given category)'s title and direct download URL.
+This endpoint returns a JSON object containing the latest circular's information.
 
 :::tip Tip!
 
@@ -17,62 +18,108 @@ Use the `/cached-latest` endpoint if you're making an app that does not require 
 
 #### Parameters:
 * `category` : `string`. Can have values (`general`, `ptm`, `exam`) [Mandatory]
-* `receive` : `string`. Can have values (`all`, `titles`, `links`) [Optional]
 
 The `category` parameter refers to one of the 3 main category of circulars on the 
 BPS Website.
 
-The `receive` parameter refers to what data you want to receive, either `all` which gives
-the latest circular's Name and download URL, or `titles` which gives only the latest circular's Name, or `links` which gives only the latest circular's download URL.
 
 ## Example Requests
 
-Python
 
+
+<Tabs>
+<TabItem value="python" label="Python" default>
+
+Here is an example request using Python's `requests` library:
 
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/latest/"
-payload = {'category': 'ptm', "receive": "all"}
+url = "https://bpsapi.rajtech.me/v1/latest"
+payload = {'category': 'ptm'}
 
 request = requests.get(url, json=payload)
 print(request.text)
 ```
 
-Curl
+</TabItem>
+<TabItem value="curl" label="cURL">
+
+Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/latest/' \
+  'https://bpsapi.rajtech.me/v1/latest' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
   "category": "ptm",
-  "receive": "all"
       }'
 ```
 
+
+</TabItem>
+
+</Tabs>
+
+
+
 ## Example Response
 
-1. Category: `ptm`, Receive: `all`
+<Tabs>
+<TabItem value="general" label="General" default>
+
+When getting circulars from the `general` category, the response is a dictionary with the following keys:
 
 ```python
-{"title":"2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII",
-"link":"https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1095:2nd-parent-teacher-meeting-ptm-for-grades-ix-x-xii"}
+{
+  "status": "success",
+  "http_status": 200,
+  "data": {
+    "title": "International French Spell Bee",
+    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147"
+  }
+}
 ```
 
-2. Category: `ptm`, Receive: `titles`
+</TabItem>
+<TabItem value="ptm" label="PTM">
+
+When getting circulars from the `ptm` category, the response is a dictionary with the following keys:
 
 ```python
-"2nd Parent Teacher Meeting (PTM) for Grades IX, X & XII"
+{
+  "status": "success",
+  "http_status": 200,
+  "data": {
+    "title": "1st Parent Teacher Meeting (PTM) for Grade XI",
+    "link": "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1126"
+  }
+}
 ```
 
-3. Category: `ptm`, Receive: `links`
+
+</TabItem>
+<TabItem value="exam" label="Exam">
+
+When getting circulars from the `exam` category, the response is a dictionary with the following keys:
 
 ```python
-"https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1095:2nd-parent-teacher-meeting-ptm-for-grades-ix-x-xii"
+{
+  "status": "success",
+  "http_status": 200,
+  "data": {
+    "title": "TIME TABLE - PRE BOARD -  1(X & XII) &  HALF YEARLY EXAM (XI) - OCTOBER 2022",
+    "link": "https://bpsdoha.com/circular/category/35-exam-time-table-and-syllabus-2022-23?download=1146"
+  }
+}
 ```
+
+
+</TabItem>
+</Tabs>
+
+
 ---
 
 Thanks for reading!
