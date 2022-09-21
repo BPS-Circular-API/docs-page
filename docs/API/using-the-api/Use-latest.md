@@ -59,7 +59,6 @@ curl -X 'GET' \
 
 
 </TabItem>
-
 </Tabs>
 
 
