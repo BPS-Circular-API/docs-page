@@ -88,14 +88,14 @@ Searching for `mobile` will return the following result:
 The bot will automatically send a reminder to the set channel or User DMs every time a new circular is posted to the BPS Website.
 
 <Tabs>
-<TabItem value="cyber" label="Cyber" default>
+<TabItem value="channel" label="Channel" default>
 
 Here, the bot has been set up to remind in the `#circulars` channel, with `/circular admin setup`
 
 ![](/img/circular-remind-channel.png)
 
 </TabItem>
-<TabItem value="mobile" label="Mobile">
+<TabItem value="dms" label="DM">
 
 Here, the bot has been set up to remind you with in a DM with `/circular remindme`
 
