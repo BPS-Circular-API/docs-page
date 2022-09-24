@@ -51,9 +51,7 @@ curl -X 'GET' \
   'https://bpsapi.rajtech.me/v1/cached-latest' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{
-  "category": "ptm",
-      }'
+  -d '{"category": "ptm"}'
 ```
 
 

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 ---
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
+
 # Using /search Endpoint
 
 In this tutorial, we will be using the `/search` endpoint to get a circular's download URL and Title.
@@ -21,36 +24,52 @@ The `title` parameter refers to the circular name.
 
 ## Example Requests
 
-Python 
+<Tabs>
+<TabItem value="python" label="Python" default>
+
+Here is an example request using Python's `requests` library:
 
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/search/"
+url = "https://bpsapi.rajtech.me/v1/search"
 payload = {'title': 'mobile'}
 
 request = requests.get(url, json=payload)
 print(request.text)
 ```
 
-Curl
+</TabItem>
+<TabItem value="curl" label="cURL">
+
+Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/search/' \
+  'https://bpsapi.rajtech.me/v1/search' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{"title": "mobile"}'
 ```
 
-## Example Responses
+
+</TabItem>
+</Tabs>
+
+
+
+## Example Response
 
 
 ```python
-[
-    "Mobile Phone Usage Policy",
-    "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1108:mobile-phone-usage-policy"
-]
+{
+  "status": "success",
+  "http_status": 200,
+  "data": {
+    "title": "Mobile Phone Usage Policy",
+    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1108"
+  }
+}
 ```
 ---
 
