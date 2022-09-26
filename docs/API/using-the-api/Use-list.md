@@ -12,9 +12,14 @@ This endpoint returns a JSON object containing the list of circulars in the cate
 
 
 #### Parameters:
-* `category` : `string`. Can have values (`general`, `ptm`, `exam`) [Mandatory]
+* `category` : `string`. Needs to be either (`general`, `ptm`, `exam`) or a BPS Category ID (int) [Mandatory]
 
-The `category` parameter refers to one of the 3 main category of circulars on the BPS Website.
+The `category` parameter refers to any one of the categories of circulars on the BPS Website. 
+
+The category ID can be found in the URL of the circulars page of the BPS Website, like here `https://www.bpsdoha.net/circular/category/41-sample-question-papers`, 41 is the ID
+
+Or if you want the to use one of the three main categories, you can use `general`, `ptm` or `exam` as the value of the `category` parameter, instead of a numeric ID
+
 
 
 
@@ -525,10 +530,25 @@ When getting circulars from the `exam` category, the response is a dictionary wi
 
 </p>
 </details>
+</TabItem>
+<TabItem value="Empty Category" label="Empty Category">
+
+Here's what you get when you try to get the data from an empty category.
+
+```python
+{
+  "status": "success",
+  "http_status": 200,
+  "data": [],
+  "message": "There are no circulars in this category."
+}
+```
 
 
 </TabItem>
 </Tabs>
+
+
 ---
 
 Thanks for reading!
