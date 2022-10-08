@@ -27,6 +27,8 @@ Or if you want the to use one of the three main categories, you can use `general
 
 <Tabs>
 
+
+
 <TabItem value="python" label="Python" default>
 
 Here are example requests using Python's `requests` library:
@@ -160,7 +162,6 @@ fetch(
         headers: {
             'Content-Type': 'application/json',
         },
-        parameters: JSON.stringify(params),
     })
 
     .then( (res) => res.json())
@@ -182,7 +183,6 @@ fetch(
         headers: {
             'Content-Type': 'application/json',
         },
-        parameters: JSON.stringify(params),
     })
 
     .then( (res) => res.json())
@@ -204,7 +204,6 @@ fetch(
         headers: {
             'Content-Type': 'application/json',
         },
-        parameters: JSON.stringify(params),
     })
 
     .then( (res) => res.json())
@@ -226,7 +225,6 @@ fetch(
         headers: {
             'Content-Type': 'application/json',
         },
-        parameters: JSON.stringify(params),
     })
 
     .then( (res) => res.json())
@@ -713,7 +711,7 @@ When getting circulars from the `exam` category, the response is a dictionary wi
 </p>
 </details>
 </TabItem>
-<TabItem value="Empty Category" label="Empty Category">
+<TabItem value="empty category" label="Empty Category">
 
 Here's what you get when you try to get the data from an empty category.
 
@@ -728,6 +726,21 @@ Here's what you get when you try to get the data from an empty category.
 
 
 </TabItem>
+<TabItem value="error" label="Error">
+
+Here's what you get when you try to get the data from an empty category.
+
+```python
+{
+  "status": "error",
+  "http_status": 500,
+  "error": "Error Here"
+}
+```
+
+
+</TabItem>
+
 </Tabs>
 
 
