@@ -1,8 +1,7 @@
 ---
 sidebar_position: 5
 ---
-import Tabs			from "@theme/Tabs";
-import TabItem		from "@theme/TabItem";
+
 
 # Using /cached-latest Endpoint
 
@@ -19,7 +18,7 @@ Don't use this endpoint if you're making an app that needs minute level precisio
 :::
 
 #### Parameters:
-* `category` : `string`. Can have values (`general`, `ptm`, `exam`) [Mandatory]
+- `category` : `string`. Can have values (`general`, `ptm`, `exam`) [Mandatory]
 
 The `category` parameter refers to one of the 3 main category of circulars on the BPS Website.
 
@@ -27,35 +26,173 @@ The `category` parameter refers to one of the 3 main category of circulars on th
 ## Example Requests
 
 <Tabs>
+
+
+
 <TabItem value="python" label="Python" default>
 
-Here is an example request using Python's `requests` library:
+Here are example requests using Python's `requests` library:
+
+<Tabs>
+<TabItem value="general" label="General" default>
 
 ```python
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/cached-latest"
-payload = {'category': 'ptm'}
+params = {'category': 'general'}
 
-request = requests.get(url, json=payload)
+request = requests.get(url, params=params)
 print(request.text)
 ```
 
 </TabItem>
+<TabItem value="ptm" label="PTM">
+
+```python
+import requests
+
+url = "https://bpsapi.rajtech.me/v1/cached-latest"
+params = {'category': 'ptm'}
+
+request = requests.get(url, params=params)
+print(request.text)
+```
+
+</TabItem>
+<TabItem value="exam" label="Exam">
+
+```python
+import requests
+
+url = "https://bpsapi.rajtech.me/v1/cached-latest"
+params = {'category': 'exam'}
+
+request = requests.get(url, params=params)
+print(request.text)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+
+
+
 <TabItem value="curl" label="cURL">
 
-Here is an example request using cURL:
+Here is are example requests using cURL:
+
+<Tabs>
+<TabItem value="general" label="General" default>
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/cached-latest' \
+  'https://bpsapi.rajtech.me/v1/cached-latest?category=general' \
   -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"category": "ptm"}'
+  -H 'Content-Type: application/json' 
 ```
 
+</TabItem>
+<TabItem value="ptm" label="PTM">
+
+```bash
+curl -X 'GET' \
+  'https://bpsapi.rajtech.me/v1/cached-latest?category=ptm' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' 
+```
 
 </TabItem>
+<TabItem value="exam" label="Exam">
+
+```bash
+curl -X 'GET' \
+  'https://bpsapi.rajtech.me/v1/cached-latest?category=exam' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' 
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+
+
+
+<TabItem value="nodejs" label="Node.js">
+
+Here are example requests using Node.js's `node-fetch` library:
+
+<Tabs>
+<TabItem value="general" label="General" default>
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/cached-latest';
+const params = {category: 'general'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+<TabItem value="ptm" label="PTM">
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/cached-latest';
+const params = {category: 'ptm'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+<TabItem value="exam" label="Exam">
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/cached-latest';
+const params = {category: 'exam'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+</Tabs>
+</TabItem>
+
+
+
 </Tabs>
 
 ## Example Response
@@ -117,3 +254,6 @@ When getting circulars from the `exam` category, the response is a dictionary wi
 ---
 
 Thanks for reading!
+
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
