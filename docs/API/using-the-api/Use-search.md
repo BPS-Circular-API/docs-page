@@ -33,9 +33,9 @@ Here is an example request using Python's `requests` library:
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/search"
-payload = {'title': 'mobile'}
+params = {'title': 'mobile'}
 
-request = requests.get(url, json=payload)
+request = requests.get(url, params=params)
 print(request.text)
 ```
 
@@ -46,14 +46,41 @@ Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/search' \
+  'https://bpsapi.rajtech.me/v1/search?title=mobile' \
   -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"title": "mobile"}'
+  -H 'Content-Type: application/json'
 ```
 
 
 </TabItem>
+
+
+<TabItem value="node.js" label="Node.js">
+
+Here is an example request using Node.js's `node-fetch` library:
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/search';
+const params = {title: 'mobile'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+
+
+
 </Tabs>
 
 
