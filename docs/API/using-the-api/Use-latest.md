@@ -1,8 +1,7 @@
 ---
 sidebar_position: 2
 ---
-import Tabs			from "@theme/Tabs";
-import TabItem		from "@theme/TabItem";
+
 
 # Using /latest Endpoint
 
@@ -333,3 +332,6 @@ Here's what you get when you try to get the data from an empty category.
 ---
 
 Thanks for reading!
+
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
