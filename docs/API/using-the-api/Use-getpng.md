@@ -1,8 +1,6 @@
 ---
 sidebar_position: 4
 ---
-import Tabs			from "@theme/Tabs";
-import TabItem		from "@theme/TabItem";
 
 # Using /getpng Endpoint
 
@@ -13,7 +11,7 @@ The `/getpng` endpoint returns a string containing the direct URL to a PNG versi
 
 #### Parameters:
 
-* `url` : `string`. A valid URL pointing to a .pdf file on the BPS website [Mandatory]
+-`url` : `string`. A valid URL pointing to a .pdf file on the BPS website [Mandatory]
 
 The `url` parameter refers to the direct circular PDF download URL.
 
@@ -21,40 +19,82 @@ The `url` parameter refers to the direct circular PDF download URL.
 ## Example Requests
 
 <Tabs>
+
+
+
 <TabItem value="python" label="Python" default>
 
-Here is an example request using Python's `requests` library:
+Here are example requests using Python's `requests` library:
+
 
 ```python
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/getpng"
-payload = {"url": "https://bpsdoha.net/circular/category/38-circular-ay-2022-23?download=1123"}
+params = {'url': 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'}
 
-request = requests.get(url, json=payload)
+request = requests.get(url, params=params)
 print(request.text)
 ```
 
+
+
 </TabItem>
+
+
+
 <TabItem value="curl" label="cURL">
 
-Here is an example request using cURL:
+Here is are example requests using cURL:
+
+
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/getpng' \
+  'https://bpsapi.rajtech.me/v1/getpng?url=https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147' \
   -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "url": "https://bpsdoha.net/circular/category/38-circular-ay-2022-23?download=1123"
-  }'
+  -H 'Content-Type: application/json' 
 ```
 
+</TabItem>
+
+
+
+<TabItem value="nodejs" label="Node.js">
+
+Here are example requests using Node.js's `node-fetch` library:
+
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/getpng';
+const params = {url: 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
 
 </TabItem>
+
+
+
 </Tabs>
 
 ## Example Responses
+
+<Tabs>
+
+<TabItem value="success" label="Success" default>
+
 
 ```python
 {
@@ -64,6 +104,25 @@ curl -X 'GET' \
 }
 ```
 
+</TabItem>
+
+<TabItem value="error" label="Error">
+
+```python
+{
+  "status": "error",
+  "http_status": 500,
+  "message": "Invalid URL"
+}
+```
+
+</TabItem>
+</Tabs>
+
+
 ---
 
 Thanks for reading!
+
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
