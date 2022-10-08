@@ -30,35 +30,217 @@ Or if you want the to use one of the three main categories, you can use `general
 
 
 <Tabs>
+
+
+
 <TabItem value="python" label="Python" default>
 
-Here is an example request using Python's `requests` library:
+Here are example requests using Python's `requests` library:
+
+<Tabs>
+<TabItem value="general" label="General" default>
 
 ```python
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/latest"
-payload = {'category': 'ptm'}
+params = {'category': 'general'}
 
-request = requests.get(url, json=payload)
+request = requests.get(url, params=params)
 print(request.text)
 ```
 
 </TabItem>
+<TabItem value="ptm" label="PTM">
+
+```python
+import requests
+
+url = "https://bpsapi.rajtech.me/v1/latest"
+params = {'category': 'ptm'}
+
+request = requests.get(url, params=params)
+print(request.text)
+```
+
+</TabItem>
+<TabItem value="exam" label="Exam">
+
+```python
+import requests
+
+url = "https://bpsapi.rajtech.me/v1/latest"
+params = {'category': 'exam'}
+
+request = requests.get(url, params=params)
+print(request.text)
+```
+
+</TabItem>
+<TabItem value="id" label="Category ID">
+
+```python
+import requests
+
+url = "https://bpsapi.rajtech.me/v1/latest"
+params = {'category': '41'} # It doesn't matter if you use a string or an int as the value
+
+request = requests.get(url, params=params)
+print(request.text)
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+
+
+
 <TabItem value="curl" label="cURL">
 
-Here is an example request using cURL:
+Here is are example requests using cURL:
+
+<Tabs>
+<TabItem value="general" label="General" default>
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/latest' \
+  'https://bpsapi.rajtech.me/v1/latest?category=general' \
   -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"category": "ptm"}'
+  -H 'Content-Type: application/json' 
 ```
 
+</TabItem>
+<TabItem value="ptm" label="PTM">
+
+```bash
+curl -X 'GET' \
+  'https://bpsapi.rajtech.me/v1/latest?category=ptm' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' 
+```
 
 </TabItem>
+<TabItem value="exam" label="Exam">
+
+```bash
+curl -X 'GET' \
+  'https://bpsapi.rajtech.me/v1/latest?category=exam' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' 
+```
+
+</TabItem>
+<TabItem value="id" label="Category ID">
+
+```bash
+curl -X 'GET' \
+  'https://bpsapi.rajtech.me/v1/latest?category=41' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' 
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+
+
+
+<TabItem value="nodejs" label="Node.js">
+
+Here are example requests using Node.js's `node-fetch` library:
+
+<Tabs>
+<TabItem value="general" label="General" default>
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/latest';
+const params = {category: 'general'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+<TabItem value="ptm" label="PTM">
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/latest';
+const params = {category: 'ptm'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+<TabItem value="exam" label="Exam">
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/latest';
+const params = {category: 'exam'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+<TabItem value="id" label="Category ID">
+
+```js
+import fetch from 'node-fetch';
+const url = 'https://bpsapi.rajtech.me/v1/latest';
+const params = {category: '41'};
+
+fetch(
+    `${url}?${new URLSearchParams(params)}`,
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    .then( (res) => res.json())
+    .then( (res) => console.log(res));
+```
+
+</TabItem>
+</Tabs>
+</TabItem>
+
+
+
 </Tabs>
 
 
@@ -116,7 +298,7 @@ When getting circulars from the `exam` category, the response is a dictionary wi
 
 
 </TabItem>
-<TabItem value="Empty Category" label="Empty Category">
+<TabItem value="empty category" label="Empty Category">
 
 Here's what you get when you try to get the data from an empty category.
 
@@ -126,6 +308,20 @@ Here's what you get when you try to get the data from an empty category.
   "http_status": 200,
   "data": [],
   "message": "There are no circulars in this category."
+}
+```
+
+
+</TabItem>
+<TabItem value="error" label="Error">
+
+Here's what you get when you try to get the data from an empty category.
+
+```python
+{
+  "status": "error",
+  "http_status": 500,
+  "error": "Error Here"
 }
 ```
 
