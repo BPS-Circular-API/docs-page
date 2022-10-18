@@ -110,9 +110,7 @@ fetch(
 
 ```python
 {
-  "status": "error",
-  "http_status": 500,
-  "message": "Invalid URL"
+    "detail": "Invalid URL"
 }
 ```
 

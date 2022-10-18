@@ -1,8 +1,7 @@
 ---
 sidebar_position: 3
 ---
-import Tabs			from "@theme/Tabs";
-import TabItem		from "@theme/TabItem";
+
 
 # Using /search Endpoint
 
@@ -101,3 +100,6 @@ fetch(
 ---
 
 Thanks for reading!
+
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";
