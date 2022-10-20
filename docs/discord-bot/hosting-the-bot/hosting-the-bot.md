@@ -9,7 +9,7 @@ Make sure You have Python 3.9 or above installed
 
 Begin with installing the packages -
 ```bash
-pip install py-cord, logging, requests, colorlog
+pip install -f requirements.txt 
 ```
 
 If you don't already have the code downloaded, clone the repository
@@ -37,4 +37,4 @@ python bot.py
 
 There you go! Your bot should now be running.
 
-Feel free to edit the cogs or upload cogs of your own to `./cogs/`. Happy programming!
+Feel free to edit the cogs or upload cogs of your own to `/cogs`. Happy programming!

@@ -16,7 +16,7 @@ Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy`
 
 #### Parameters:
 
-* `title` : `string`. The circular name, must contain at least 1 keyword [Mandatory]
+-`title` : `string`. The circular name, must contain at least 1 keyword [Mandatory]
 
 The `title` parameter refers to the circular name.
 
