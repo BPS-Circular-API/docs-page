@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'BPS Circular API | Documentation',
   tagline: 'The official documentation for the BPS Circular API',
-  url: 'https://raj.moonball.io/',
+  url: 'https://bpsapi.rajtech.me/docs/',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -51,7 +51,7 @@ const config = {
       navbar: {
         title: 'BPS Circular API',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'BPS Circular API Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -69,13 +69,21 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/intro',
+                label: 'API',
+                to: '/category/api',
               },
+              {
+                label: 'Discord Bot',
+                to: '/category/discord-bot',
+              },
+              // {
+              //   label: 'Telegram Bot',
+              //   to: '/category/telegram-bot',
+              // },
             ],
           },
           {
-            title: 'Open Source URLs',
+            title: 'Open Source Projects',
             items: [
               {
                 label: 'API',
@@ -89,6 +97,10 @@ const config = {
                 label: 'Discord Bot',
                 href: 'https://github.com/BPS-Circular-API/discord-bot',
               },
+              {
+                label: 'Telegram Bot',
+                href: 'https://github.com/BPS-Circular-API/telegram-bot',
+              },
             ],
           },
           {
@@ -98,6 +110,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/BPS-Circular-API/docs-page',
+              },
+              {
+                label: 'My Website',
+                href: 'https://rajtech.me',
               },
             ],
           },
