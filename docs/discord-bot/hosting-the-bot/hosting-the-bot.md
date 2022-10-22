@@ -9,7 +9,7 @@ Make sure You have Python 3.9 or above installed
 
 Begin with installing the packages -
 ```bash
-pip install -f requirements.txt 
+pip install -r requirements.txt 
 ```
 
 If you don't already have the code downloaded, clone the repository
