@@ -18,7 +18,7 @@ This page is an introduction to its features.
 
 The bot has many features, which include:
 1. Send a configurable message in a channel automatically, whenever a new circular is posted on the BPS Website
-2. Get a Discord Image Preview and download link of the latest circular (per category basis) with `/circular latest`
+2. Get a Preview Image, Title, ID and Download URL of the latest circular in a category with `/circular latest [category]`
 3. Get the list of all circulars in a nice-looking embed with `/circular list`
-4. Search for ANY circular which is present, on the BPS website. Just with a few keywords like `mobile`, right through Discord. And get its Image Preview, Name, and Download URL!
+4. Search for any circular present in the three main categories on the BPS Website. With just a few keywords like `mobile` or a Circular ID like `1108`, right through Discord. And get its Preview Image, Title, ID and Download URL!
 

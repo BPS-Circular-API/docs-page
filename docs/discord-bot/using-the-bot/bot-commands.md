@@ -19,7 +19,7 @@ Normal user commands are prefixed with `/circular`
 
 `/circular list [category]`: Get the whole circular list (all the circulars) of one of the three Circular categories.
 
-`/circular search [circular name]`: Look for a specific circular whose title keywords you remember. Example: Searching `mobile` finds and gives you the `Mobile Phone Usage Policy` circular, and it's details.
+`/circular search [circular name]`: Look for a specific circular whose title keywords you remember. Example: Searching `mobile` gets you the `Mobile Phone Usage Policy` circular and it's details.
 
 `/circular remindme`: Notify you in DMs when a new circular is released.
 
