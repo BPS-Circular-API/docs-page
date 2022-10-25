@@ -21,7 +21,7 @@ Proceed only if you have the Pterodactyl hosting panel.
 
 1. If you didn't add the Python Egg into the Panel, do so now.
 2. Create a new server with the Python Egg.
-3. Use a random port for the API, it does not matter.
+3. The port on the Pterodactyl panel doesn't matter. You can set it to whatever you want.
 4. Give it at least 256MB of RAM.
 5. After the server is created and the auto-installation has completed, put in the Bot files from [Our Repository](https://bpsapi.rajtech.me/r/discord-bot) 
 6. You may need to connect through SFTP to upload the folders and the `data.db` file.

@@ -11,7 +11,7 @@ $ git clone github.com/BPS-Circular-API/api
 
 2. Install required Python packages
 ```bash
-$ pip install fastapi, pydantic, bs4, requests, threading, uvicorn
+$ pip install -r requirements.txt
 ```
 
 3. Run the API

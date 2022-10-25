@@ -1,8 +1,7 @@
 ---
 sidebar_position: 2
 ---
-import Tabs			from "@theme/Tabs";
-import TabItem		from "@theme/TabItem";
+
 
 # Features
 
@@ -80,6 +79,14 @@ Searching for `mobile` will return the following result:
 ![](/img/circular-search-mobile.png)
 
 </TabItem>
+<TabItem value="code" label="Circular ID">
+
+Searching for `1003` (the circular ID) will return the following result:
+
+![](/img/circular-search-id.png)
+
+</TabItem>
+
 </Tabs>
 
 
@@ -107,3 +114,6 @@ Here, the bot has been set up to remind you with in a DM with `/circular remindm
 ---
 
 Thanks for reading, if you have any questions feel free to contact me on Discord: `Raj Dave#3215`
+
+import Tabs			from "@theme/Tabs";
+import TabItem		from "@theme/TabItem";

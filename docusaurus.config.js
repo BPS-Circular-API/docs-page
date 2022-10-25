@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'BPS Circular API | Documentation',
   tagline: 'The official documentation for the BPS Circular API',
-  url: 'https://bpsapi.rajtech.me/docs/',
+  url: 'https://bpsapi.rajtech.me/',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
