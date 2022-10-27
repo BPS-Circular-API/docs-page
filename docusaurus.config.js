@@ -123,6 +123,8 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['apacheconf', 'python', 'json'],
+
       },
     }),
 };

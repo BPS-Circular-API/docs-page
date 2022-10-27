@@ -33,8 +33,8 @@ This is an advanced topic, and you should only proceed if you know what you're d
     ```
 
 4. After opening the `example.com.conf` file, add this. Make sure to replace `example.com` with your domain name.
-    `example.com.conf` 
-    ```apacheconf
+   
+    ```apacheconf title="example.com.conf"
     <VirtualHost *:443>
         ServerName bpsapi.rajtech.me
         DocumentRoot /var/www/bpsapi.rajtech.me
@@ -56,11 +56,13 @@ This is an advanced topic, and you should only proceed if you know what you're d
    
 5. Save the file and exit.
 6. Create a new file in the same directory called `example.com-le-ssl.conf`
-    ```bash
+    
+   ```bash
     $ nano example.com-le-ssl.conf
     ```
 7. After opening the `example.com-le-ssl.conf` file, add this. Make sure to replace `example.com` with your domain name.
-    ```apacheconf
+    
+   ```apacheconf title="example.com-le-ssl.conf"
     <IfModule mod_ssl.c>
     <VirtualHost *:443>
         ServerName bpsapi.rajtech.me
