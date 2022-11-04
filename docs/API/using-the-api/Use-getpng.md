@@ -93,14 +93,34 @@ fetch(
 
 <Tabs>
 
-<TabItem value="success" label="Success" default>
+<TabItem value="single-page" label="Single Page" default>
 
+Here's a circular with a single page: 
 
 ```python
 {
   "status": "success",
   "http_status": 200,
-  "data": "https://bpsapi.rajtech.me/circularpng/1123.png"
+  "data": ["https://bpsapi.rajtech.me/circularpng/1146.png"]
+}
+```
+
+</TabItem>
+
+<TabItem value="multiple-page" label="Multiple Page" default>
+
+Here's a circular with multiple pages:
+
+```python
+{
+  "status": "success",
+  "http_status": 200,
+  "data": [
+    "https://bpsapi.rajtech.me/circularpng/1147.png",
+    "https://bpsapi.rajtech.me/circularpng/1147-2.png",
+    "https://bpsapi.rajtech.me/circularpng/1147-3.png",
+    "https://bpsapi.rajtech.me/circularpng/1147-4.png"
+  ]
 }
 ```
 
