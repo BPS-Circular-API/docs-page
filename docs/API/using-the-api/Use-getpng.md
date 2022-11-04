@@ -6,7 +6,7 @@ sidebar_position: 4
 
 In this tutorial, we will be using the `/getpng` endpoint to get a circular's PNG file.
 
-The `/getpng` endpoint returns a string containing the direct URL to a PNG version of a BPS Circular.
+The `/getpng` endpoint returns a dict containing the direct URL to a PNG version of a BPS Circular.
 
 
 #### Parameters:
