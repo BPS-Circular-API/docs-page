@@ -11,7 +11,7 @@ The `/getpng` endpoint returns a dict containing the direct URL to a PNG version
 
 #### Parameters:
 
--`url` : `string`. A valid URL pointing to a .pdf file on the BPS website [Mandatory]
+- `url` : `string`. A valid URL pointing to a .pdf file on the BPS website [Mandatory]
 
 The `url` parameter refers to the direct circular PDF download URL.
 
