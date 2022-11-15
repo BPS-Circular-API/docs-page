@@ -37,7 +37,7 @@ The `API` class has four methods, one for each endpoint. These methods are:
 - `getpng()`
 
 
-### 1) `latest(category: str | int, cached: bool = False)`
+### 1) `latest(...)`
 
 The `latest()` method is used to get the latest circular in a category. 
 
@@ -60,7 +60,7 @@ latest_category_41 = api.latest(category=41)
 The `latest()` method returns a `dict` or `None` if no circular is found within the category. It may raise a `ValueError` if the category is invalid, or `ConnectionError` if the API is down/can't be reached. 
 
 
-### 2) `list(category: str | int, amount: int = -1)`
+### 2) `list(...)`
 
 The `list()` method is used to get a list of all circulars in a category. 
 
@@ -82,7 +82,7 @@ category_41_list = api.list(category=41)
 
 The `list()` method returns a `dict` or `None` if no circular is found within the category. It may raise a `ValueError` if the category is invalid, or `ConnectionError` if the API is down/can't be reached.
 
-### 3) `search(query: str | int)`
+### 3) `search(...)`
 
 The `search()` method is used to search for a circular by its ID or keywords.
 
@@ -100,7 +100,7 @@ mobile_circular = api.search(query="mobile")
 
 The `search()` method returns a `dict` or `None` if no circular is found. It may raise a `ValueError` if the query is invalid, or `ConnectionError` if the API is down/can't be reached.
 
-### 4) `getpng(circular_id: int)`
+### 4) `getpng(...)`
 
 The `getpng()` method is used to get the preview image of a circular in the form of a list of direct URLs pointing to the image.
 
