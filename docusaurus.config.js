@@ -90,6 +90,10 @@ const config = {
                 href: 'https://github.com/BPS-Circular-API/api',
               },
               {
+                label: 'Python Package',
+                href: 'https://github.com/BPS-Circular-API/python-package',
+              },
+              {
                 label: 'Docs Page',
                 href: 'https://github.com/BPS-Circular-API/docs-page',
               },
@@ -101,6 +105,7 @@ const config = {
                 label: 'Telegram Bot',
                 href: 'https://github.com/BPS-Circular-API/telegram-bot',
               },
+
             ],
           },
           {
