@@ -5,8 +5,7 @@ sidebar_position: 4
 # The `CircularCheckerGroup` Class
 
 The `CircularCheckerGroup` class is a really simple class which aims to let you 
-check for new circulars in multiple categories at once. It is a subclass of the 
-`CircularChecker` class, and inherits all of its methods and attributes.
+check for new circulars in multiple categories at once. 
 
 ## Usage
 
