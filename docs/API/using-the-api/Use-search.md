@@ -93,10 +93,12 @@ fetch(
   "http_status": 200,
   "data": {
     "title": "Mobile Phone Usage Policy",
-    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1108"
+    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1108",
+    "id": "1108"
   }
 }
 ```
+
 ---
 
 Thanks for reading!
