@@ -257,7 +257,8 @@ When getting circulars from the `general` category, the response is a dictionary
   "http_status": 200,
   "data": {
     "title": "International French Spell Bee",
-    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147"
+    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147",
+    "id": 1147,
   }
 }
 ```
@@ -273,7 +274,8 @@ When getting circulars from the `ptm` category, the response is a dictionary wit
   "http_status": 200,
   "data": {
     "title": "1st Parent Teacher Meeting (PTM) for Grade XI",
-    "link": "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1126"
+    "link": "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1126",
+    "id": "1126"
   }
 }
 ```
@@ -290,7 +292,8 @@ When getting circulars from the `exam` category, the response is a dictionary wi
   "http_status": 200,
   "data": {
     "title": "TIME TABLE - PRE BOARD -  1(X & XII) &  HALF YEARLY EXAM (XI) - OCTOBER 2022",
-    "link": "https://bpsdoha.com/circular/category/35-exam-time-table-and-syllabus-2022-23?download=1146"
+    "link": "https://bpsdoha.com/circular/category/35-exam-time-table-and-syllabus-2022-23?download=1146",
+    "id": "1146"
   }
 }
 ```
