@@ -30,8 +30,7 @@ const FeatureList = [
     description: (
       <>
         Our API and everything related to our project is open source, so you can contribute to it and help us
-        improve it. You can also use it for your own projects without worrying
-        about licensing.
+        improve it. You can also use it for your own projects without worrying about licensing.
       </>
     ),
   },
