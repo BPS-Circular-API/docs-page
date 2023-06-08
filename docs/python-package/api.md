@@ -31,7 +31,7 @@ api = bpsapi.API(url="https://bpsapi.rajtech.me/v1/")
 
 The `API` class has four methods, one for each endpoint. These methods are:
 
-- `latest()` (includes /cached-latest too)
+- `latest()`
 - `list()`
 - `search()`
 - `getpng()`
@@ -44,14 +44,10 @@ The `latest()` method is used to get the latest circular in a category.
 #### Parameters
 
 - `category`: string | int. The category id or the there main category names of the circular you want to get. Can be one of 'general', 'ptm', 'exam' or an integer category ID. [Mandatory]
-- `cached`: bool. Whether to use the cached version of the latest circular or not (get it from /cached-latest). Defaults to False [Optional]
 
 ```python
 # Get the latest circular in the General category
 latest_general = api.latest(category="general")
-
-# Get the cached latest circular in the PTM category
-cached_latest_ptm = api.latest(category="ptm", cached=True)
 
 # Get the latest circular in the category with ID 41
 latest_category_41 = api.latest(category=41)

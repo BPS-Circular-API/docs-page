@@ -16,7 +16,8 @@ Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy`
 
 #### Parameters:
 
--`title` : `string`. The circular name, must contain at least 1 keyword [Mandatory]
+- `title` : `string`. The circular name, must contain at least 1 keyword [Mandatory]
+- `amount`: `integer`. The amount of circulars to return. Defaults to `1` [Optional]
 
 The `title` parameter refers to the circular name.
 
@@ -32,7 +33,7 @@ Here is an example request using Python's `requests` library:
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/search"
-params = {'title': 'mobile'}
+params = {'title': 'mobile', 'amount': 2}
 
 request = requests.get(url, params=params)
 print(request.text)
@@ -45,7 +46,7 @@ Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/search?title=mobile' \
+  'https://bpsapi.rajtech.me/v1/search?title=mobile&amount=2' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json'
 ```
@@ -61,7 +62,7 @@ Here is an example request using Node.js's `node-fetch` library:
 ```js
 import fetch from 'node-fetch';
 const url = 'https://bpsapi.rajtech.me/v1/search';
-const params = {title: 'mobile'};
+const params = {title: 'mobile', amount: 2};
 
 fetch(
     `${url}?${new URLSearchParams(params)}`,
@@ -91,11 +92,18 @@ fetch(
 {
   "status": "success",
   "http_status": 200,
-  "data": {
-    "title": "Mobile Phone Usage Policy",
-    "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1108",
-    "id": "1108"
-  }
+  "data": [
+    {
+      "title": "Grade X - Syllabus for Half Yearly Exam",
+      "link": "https://bpsdoha.com/circular/category/45-exam-time-table-syllabus-2023-24?download=1355",
+      "id": "1355"
+    },
+    {
+      "title": "Grade X & XII - Timetable for Half Yearly Exam",
+      "link": "https://bpsdoha.com/circular/category/45-exam-time-table-syllabus-2023-24?download=1351",
+      "id": "1351"
+    }
+  ]
 }
 ```
 
