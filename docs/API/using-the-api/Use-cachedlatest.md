@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Using /cached-latest Endpoint
 
-:::error
+:::warning Warning!
 
 This endpoint is deprecated and will be removed in the next major version of the API. Please use the `/latest` endpoint instead.
 
