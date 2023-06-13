@@ -4,11 +4,18 @@ sidebar_position: 1
 
 # Introduction
 
-:::tip Tip!
+:::warning Warning
 
-Here's the invite link to the bot - **https://bpsapi.rajtech.me/r/telegram-bot-invite**
+The Telegram bot is no longer maintained and isn't hosted anymore. You can still use the Discord bot though.
+The GitHub repository and this documentation will remain online for archival purposes.
 
 :::
+
+[//]: # (:::tip Tip!)
+[//]: # ()
+[//]: # (Here's the invite link to the bot - **https://bpsapi.rajtech.me/r/telegram-bot-invite**)
+[//]: # ()
+[//]: # (:::)
 
 The **BPS Circular Bot** is a Simple, Public and [Open Source](https://bpsapi.rajtech.me/r/telegram-bot) Telegram Bot made using [Our API](https://rajtech.me/docs/category/using-the-api/intro). It runs 24/7 on reliable servers, and is completely free to use. 
 
