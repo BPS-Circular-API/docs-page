@@ -53,18 +53,6 @@ jobs:
           PREFIX_PATHS: 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
 
-      - name: SFTP Delete
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: ${{ secrets.SSH_USER }}
-          server: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          remote_path: /var/www/bpsapi.rajtech.me/docs/
-          args: '-o ConnectTimeout=5 rm -rf *'
-
-
-
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -76,7 +64,9 @@ jobs:
           server: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-
+          
+          # will delete all remove files before copying
+          delete_remote_files: true
 
           # will put all file under this path
           local_path: ./* # default is ./*
