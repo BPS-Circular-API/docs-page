@@ -107,7 +107,7 @@ Here's a circular with a single page:
 
 </TabItem>
 
-<TabItem value="multiple-page" label="Multiple Page" default>
+<TabItem value="multiple-page" label="Multiple Pages" default>
 
 Here's a circular with multiple pages:
 
@@ -130,6 +130,8 @@ Here's a circular with multiple pages:
 
 ```python
 {
+    "status": "error",
+    "http_status": 400,
     "detail": "Invalid URL"
 }
 ```

@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -54,27 +53,52 @@ const config = {
           alt: 'BPS Circular API Logo',
           src: 'img/logo.svg',
         },
-        items: [
-          {
+        items: [{
             href: 'https://github.com/orgs/BPS-Circular-API/',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            to: '/docs/category/api',
+            label: 'API',
+            position: 'left',
+          },
+          {
+            to: '/docs/category/discord-bot',
+            label: 'Discord Bot',
+            position: 'left',
+          },
+          {
+            to: '/docs/category/python-package',
+            label: 'Python Package',
+            position: 'left',
+          },
+          {
+            to: '/docs/category/telegram-bot',
+            label: 'Telegram Bot',
+            position: 'left',
+
+
+          }
+
+
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
+        links: [{
             title: 'Docs',
-            items: [
-              {
+            items: [{
                 label: 'API',
                 to: '/category/api',
               },
               {
                 label: 'Discord Bot',
                 to: '/category/discord-bot',
+              },
+              {
+                label: 'Python Package',
+                to: '/category/python-package',
               },
               // {
               //   label: 'Telegram Bot',
@@ -84,8 +108,7 @@ const config = {
           },
           {
             title: 'Open Source Projects',
-            items: [
-              {
+            items: [{
                 label: 'API',
                 href: 'https://github.com/BPS-Circular-API/api',
               },
