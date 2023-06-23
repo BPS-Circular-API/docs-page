@@ -75,11 +75,6 @@ This is an advanced topic, and you should only proceed if you know what you're d
         ProxyPass "/api" "http://192.168.100.80:5641"
         ProxyPassReverse "/api" "http://192.168.100.80:5641"
 
-        Alias "/circularpng" "/var/lib/pterodactyl/volumes/7653645e-cde3-4fcd-8715-ea4471526a54/circularimages"
-
-        <Directory /var/lib/pterodactyl/volumes/7653645e-cde3-4fcd-8715-ea4471526a54/circularimages>
-                Require all granted
-        </Directory>
 
         SSLCertificateFile /etc/letsencrypt/live/bpsapi.rajtech.me/fullchain.pem
         SSLCertificateKeyFile /etc/letsencrypt/live/bpsapi.rajtech.me/privkey.pem

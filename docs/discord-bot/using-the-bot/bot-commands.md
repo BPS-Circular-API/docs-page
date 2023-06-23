@@ -5,7 +5,6 @@ sidebar_position: 2
 # Bot Commands 
 Our Discord Bot has **3** main commands!
 
-There are three circular categories. `General`, `PTM` and `Exam`. 
 
 ## User Commands
 
@@ -17,11 +16,11 @@ Normal user commands are prefixed with `/circular`
 
 `/circular latest [category]`: Get the latest circular of one of the three Circular categories.
 
-`/circular list [category]`: Get the whole circular list (all the circulars) of one of the three Circular categories.
+`/circular list [category]`: Get the whole circular list (all the circulars) of one/all the Circular categories.
 
-`/circular search [circular name]`: Look for a specific circular whose title keywords you remember. Example: Searching `mobile` gets you the `Mobile Phone Usage Policy` circular and it's details.
+`/circular search [query]`: Get the circular details by searching with its circular ID or title keywords
 
-`/circular remindme`: Notify you in DMs when a new circular is released.
+`/circular notifyme`: Notify you in DMs when a new circular is released.
 
 ## Server Administrator Commands
 
@@ -31,9 +30,9 @@ Server administrator commands start with `/circular admin`.
 
 :::
 
-`/circular admin setup`: Subscribe a channel for the listener for when a new circular is posted.
+`/circular admin setup`: Notify in the channel when a new circular is posted.
 
-`/circular admin delete`: Delete the subscription for the listener for when a new circular is posted.
+`/circular admin delete`: Stop notifying in the channel when a new circular is posted.
 
 -----
-Thanks for reading! if you would like more support or help feel free to contact me at `Raj Dave#3215`
+Thanks for reading, if you have any questions feel free to contact me on Discord: `@rajdave`

@@ -6,17 +6,17 @@ sidebar_position: 3
 # Using /search Endpoint
 
 In this tutorial, we will be using the `/search` endpoint to get a circular's download URL and Title.
-The `/search` endpoint returns a string containing the download URL of the circular, taking keywords of the actual title of the circular.
+The `/search` endpoint returns a list containing similar circulars, taking keywords of the actual title of the circular.
 
 This endpoint returns a list (or None if not found) containing the download URL and title of the circular.  
 It basically uses a search algorithm to find the circular based on the keywords.
 
-Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy` and returns the download URL too.
+Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy` and returns the circular object.
 
 
 #### Parameters:
 
-- `title` : `string`. The circular name, must contain at least 1 keyword [Mandatory]
+- `query` : `string`. Query to search for, must contain at least 1 keyword [Mandatory]
 - `amount`: `integer`. The amount of circulars to return. Defaults to `1` [Optional]
 
 The `title` parameter refers to the circular name.
@@ -33,7 +33,7 @@ Here is an example request using Python's `requests` library:
 import requests
 
 url = "https://bpsapi.rajtech.me/v1/search"
-params = {'title': 'mobile', 'amount': 2}
+params = {'query': 'mobile', 'amount': 2}
 
 request = requests.get(url, params=params)
 print(request.text)
@@ -46,7 +46,7 @@ Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/search?title=mobile&amount=2' \
+  'https://bpsapi.rajtech.me/v1/search?query=mobile&amount=2' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json'
 ```
@@ -62,7 +62,7 @@ Here is an example request using Node.js's `node-fetch` library:
 ```js
 import fetch from 'node-fetch';
 const url = 'https://bpsapi.rajtech.me/v1/search';
-const params = {title: 'mobile', amount: 2};
+const params = {query: 'mobile', amount: 2};
 
 fetch(
     `${url}?${new URLSearchParams(params)}`,
