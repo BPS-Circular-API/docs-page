@@ -12,26 +12,7 @@ The BPS Circular API Discord Bot has a lot of features, and we'll be listing the
 The `/circular latest [category]` command will send the latest circular posted to the BPS Website of the specified category.
 
 
-
-
-<Tabs>
-<TabItem value="general" label="General" default>
-
-![](/img/circular-latest-general.png)
-
-</TabItem>
-<TabItem value="ptm" label="PTM">
-
-![](/img/circular-latest-ptm.png)
-
-</TabItem>
-<TabItem value="exam" label="Exam">
-
-![](/img/circular-latest-exam.png)
-
-</TabItem>
-</Tabs>
-
+![](/img/circular-latest.png)
 
 
 ## List of Circulars
@@ -40,19 +21,14 @@ The `/circular list [category]` command will send a list of all the circulars po
 
 
 <Tabs>
-<TabItem value="general" label="General" default>
+<TabItem value="all-categories" label="All Categories" default>
 
-![](/img/circular-list-general.png)
-
-</TabItem>
-<TabItem value="ptm" label="PTM">
-
-![](/img/circular-list-ptm.png)
+![](/img/circular-list.png)
 
 </TabItem>
-<TabItem value="exam" label="Exam">
+<TabItem value="specific-category" label="Specific Category">
 
-![](/img/circular-list-exam.png)
+![](/img/circular-list-category.png)
 
 </TabItem>
 </Tabs>
@@ -65,20 +41,26 @@ The `/circular search [query]` fill find a matching circular based on the query 
 
 
 <Tabs>
-<TabItem value="cyber" label="Cyber" default>
+<TabItem value="name" label="Circular Name" default>
 
-Searching for `cyber` will return the following result:
+Searching for `Grade X` will yield the following result:
 
-![](/img/circular-search-cyber.png)
+First, you will be shown a list of circulars that match the query:
+
+![](/img/circular-search-1.png)
+
+Here is the list, it contains 3 circulars that match the query:
+
+![](/img/circular-search-2.png)
+
+
+Finally, upon selecting a circular, you will be shown the circular:
+
+![](/img/circular-search-3.png)
 
 </TabItem>
-<TabItem value="mobile" label="Mobile">
 
-Searching for `mobile` will return the following result:
 
-![](/img/circular-search-mobile.png)
-
-</TabItem>
 <TabItem value="code" label="Circular ID">
 
 Searching for `1003` (the circular ID) will return the following result:
@@ -113,7 +95,7 @@ Here, the bot has been set up to remind you with in a DM with `/circular remindm
 
 ---
 
-Thanks for reading, if you have any questions feel free to contact me on Discord: `Raj Dave#3215`
+Thanks for reading, if you have any questions feel free to contact me on Discord: `@rajdave`
 
 import Tabs			from "@theme/Tabs";
 import TabItem		from "@theme/TabItem";
