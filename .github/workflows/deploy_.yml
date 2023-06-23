@@ -69,7 +69,7 @@ jobs:
           delete_remote_files: true
 
           # will put all file under this path
-          local_path: ./build* # default is ./*
+          local_path: ./build/* # default is ./*
           # files will copy to under remote_path
           remote_path: /var/www/bpsapi.rajtech.me/docs/
 
