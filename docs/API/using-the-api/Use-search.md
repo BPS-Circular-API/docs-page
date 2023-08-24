@@ -17,9 +17,7 @@ Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy`
 #### Parameters:
 
 - `query` : `string`. Query to search for, must contain at least 1 keyword [Mandatory]
-- `amount`: `integer`. The amount of circulars to return. Defaults to `1` [Optional]
-
-The `title` parameter refers to the circular name.
+- `amount`: `integer`. The amount of circulars to return. Defaults to `3` [Optional]
 
 
 ## Example Requests
