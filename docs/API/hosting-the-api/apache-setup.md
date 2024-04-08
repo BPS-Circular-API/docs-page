@@ -3,14 +3,7 @@ sidebar_position: 4
 ---
 # Apache WebServer setup
 
-This tutorial will help you host the API on the Pterodactyl hosting panel.
-
-:::warning Warning!
-
-This is an advanced topic, and you should only proceed if you know what you're doing.
-
-:::
-
+This will show you how to set up and Apache2 config.
 
 ## Requirements
 

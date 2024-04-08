@@ -20,7 +20,7 @@ Here is an example request using Python's `requests` library:
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/categories"
+url = "https://bpsapi.rajtech.me/categories"
 
 request = requests.get(url)
 print(request.text)
@@ -33,7 +33,7 @@ Here is an example request using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/categories' \
+  'https://bpsapi.rajtech.me/categories' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json'
 ```
@@ -48,8 +48,7 @@ Here is an example request using Node.js's `node-fetch` library:
 
 ```js
 import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/categories';
-const params = {title: 'mobile'};
+const url = 'https://bpsapi.rajtech.me/categories';
 
 fetch(
     url,
@@ -75,13 +74,12 @@ fetch(
 ## Example Response
 
 
-```python
+```json
 {
   "status": "success",
   "http_status": 200,
   "data": [
     "general",
-    "ptm",
     "exam"
   ]
 }

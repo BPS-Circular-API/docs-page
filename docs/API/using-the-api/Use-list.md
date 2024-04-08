@@ -12,14 +12,11 @@ This endpoint returns a JSON object containing the list of circulars in the cate
 
 ## Parameters
 
-- `category` : `string`. Needs to be either (`general`, `ptm`, `exam`) or a BPS Category ID (int) [Mandatory]
+- `category` : `string` or `int`. Needs to be either one of the categories (for a list, visit https://bpsapi.rajtech.me/categories) or a BPS Category ID (int) [Mandatory]
 
 The `category` parameter refers to any one of the categories of circulars on the BPS Website. 
 
-The category ID can be found in the URL of the circulars page of the BPS Website, like here `https://www.bpsdoha.net/circular/category/41-sample-question-papers`, 41 is the ID
-
-Or if you want the to use one of the three main categories, you can use `general`, `ptm` or `exam` as the value of the `category` parameter, instead of a numeric ID
-
+The category ID can be found in the URL of the circulars page of the BPS Website, like here `https://bpsdoha.com/circular/category/52-academic-year-2024-25`, 52 is the ID
 
 
 
@@ -39,7 +36,7 @@ Here are example requests using Python's `requests` library:
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/list"
+url = "https://bpsapi.rajtech.me/list"
 params = {'category': 'general'}
 
 request = requests.get(url, params=params)
@@ -52,7 +49,7 @@ print(request.text)
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/list"
+url = "https://bpsapi.rajtech.me/list"
 params = {'category': 'ptm'}
 
 request = requests.get(url, params=params)
@@ -65,7 +62,7 @@ print(request.text)
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/list"
+url = "https://bpsapi.rajtech.me/list"
 params = {'category': 'exam'}
 
 request = requests.get(url, params=params)
@@ -78,8 +75,8 @@ print(request.text)
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/list"
-params = {'category': '41'} # It doesn't matter if you use a string or an int as the value
+url = "https://bpsapi.rajtech.me/list"
+params = {'category': '52'} # It doesn't matter if you use a string or an int as the value
 
 request = requests.get(url, params=params)
 print(request.text)
@@ -97,41 +94,24 @@ print(request.text)
 Here is are example requests using cURL:
 
 <Tabs>
-<TabItem value="general" label="General" default>
+<TabItem value="category-name" label="Category Name" default>
+
+One of the categories from https://bpsapi.rajtech.me/categories
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/list?category=general' \
+  'https://bpsapi.rajtech.me/list?category=general' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' 
 ```
 
 </TabItem>
-<TabItem value="ptm" label="PTM">
 
-```bash
-curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/list?category=ptm' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' 
-```
-
-</TabItem>
-<TabItem value="exam" label="Exam">
-
-```bash
-curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/list?category=exam' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' 
-```
-
-</TabItem>
 <TabItem value="id" label="Category ID">
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/list?category=41' \
+  'https://bpsapi.rajtech.me/list?category=52' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' 
 ```
@@ -148,54 +128,14 @@ curl -X 'GET' \
 Here are example requests using Node.js's `node-fetch` library:
 
 <Tabs>
-<TabItem value="general" label="General" default>
+<TabItem value="category-name" label="Category Name" default>
+
+One of the categories from https://bpsapi.rajtech.me/categories
 
 ```js
 import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/list';
+const url = 'https://bpsapi.rajtech.me/list';
 const params = {category: 'general'};
-
-fetch(
-    `${url}?${new URLSearchParams(params)}`,
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-
-    .then( (res) => res.json())
-    .then( (res) => console.log(res));
-```
-
-</TabItem>
-<TabItem value="ptm" label="PTM">
-
-```js
-import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/list';
-const params = {category: 'ptm'};
-
-fetch(
-    `${url}?${new URLSearchParams(params)}`,
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-
-    .then( (res) => res.json())
-    .then( (res) => console.log(res));
-```
-
-</TabItem>
-<TabItem value="exam" label="Exam">
-
-```js
-import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/list';
-const params = {category: 'exam'};
 
 fetch(
     `${url}?${new URLSearchParams(params)}`,
@@ -215,8 +155,8 @@ fetch(
 
 ```js
 import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/list';
-const params = {category: '41'};
+const url = 'https://bpsapi.rajtech.me/list';
+const params = {category: '52'};
 
 fetch(
     `${url}?${new URLSearchParams(params)}`,
@@ -244,7 +184,9 @@ fetch(
 ## Example Responses
 
 <Tabs>
-<TabItem value="general" label="General" default>
+<TabItem value="valid-category" label="Valid Category" default>
+
+One of the categories from https://bpsapi.rajtech.me/categories
 
 When getting circulars from the `general` category, the response is a dictionary with the following keys:
 
@@ -254,79 +196,18 @@ When getting circulars from the `general` category, the response is a dictionary
   "http_status": 200,
   "data": [
     {
-      "title": "International French Spell Bee",
-      "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147",
-      "id": 1147
-    },
-    {
-      "title": "KG Annual  Day Celebrations 2022-23",
-      "link": "https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1142",
-      "id": 1142
-    },
+      "title": "Circular 01 - Public Holiday- Eid-Al-Fitr 2024",
+      "link": "https://bpsdoha.com/circular/category/52-academic-year-2024-25?download=1618",
+      "id": "1618"
+    }
     ...
   ]
 }
 ```
 
-
-
 </TabItem>
-<TabItem value="ptm" label="PTM">
-
-When getting circulars from the `ptm` category, the response is a dictionary with the following keys:
 
 
-```python
-{
-  "status": "success",
-  "http_status": 200,
-  "data": [
-    {
-      "title": "1st Parent Teacher Meeting (PTM) for Grade XI",
-      "link": "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1126",
-      "id": "1126"
-    },
-    {
-      "title": "The 2nd Parents Teacher Meeting for Grades V, VI, VII & VIII",
-      "link": "https://bpsdoha.com/circular/category/40-circular-ptm-2022-23?download=1115",
-      "id": "1115"
-    },
-    ...
-  ]
-}
-```
-
-
-
-</TabItem>
-<TabItem value="exam" label="Exam">
-
-When getting circulars from the `exam` category, the response is a dictionary with the following keys:
-
-
-
-```python
-{
-  "status": "success",
-  "http_status": 200,
-  "data": [
-    {
-      "title": "TIME TABLE - PRE BOARD -  1(X & XII) &  HALF YEARLY EXAM (XI) - OCTOBER 2022",
-      "link": "https://bpsdoha.com/circular/category/35-exam-time-table-and-syllabus-2022-23?download=1146",
-      "id": 1146
-    },
-    {
-      "title": "GRADE XII - SYLLABUS FOR THE PRE BOARD 1 – 2022- 2023",
-      "link": "https://bpsdoha.com/circular/category/35-exam-time-table-and-syllabus-2022-23?download=1145",
-      "id": 1145
-    },
-    ...
-  ]
-}
-```
-
-
-</TabItem>
 <TabItem value="empty category" label="Empty Category">
 
 Here's what you get when you try to get the data from an empty category.
@@ -336,7 +217,6 @@ Here's what you get when you try to get the data from an empty category.
   "status": "success",
   "http_status": 200,
   "data": [],
-  "message": "There are no circulars in this category."
 }
 ```
 
@@ -349,8 +229,8 @@ Here's what you get when you try to get the data from an empty category.
 ```python
 {
   "status": "error",
-  "http_status": 500,
-  "error": "Error Here"
+  "http_status": 400,
+  "error": "Invalid category"
 }
 ```
 

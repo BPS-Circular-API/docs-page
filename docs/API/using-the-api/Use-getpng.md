@@ -30,7 +30,7 @@ Here are example requests using Python's `requests` library:
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/v1/getpng"
+url = "https://bpsapi.rajtech.me/getpng"
 params = {'url': 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'}
 
 request = requests.get(url, params=params)
@@ -51,7 +51,7 @@ Here is are example requests using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/v1/getpng?url=https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147' \
+  'https://bpsapi.rajtech.me/getpng?url=https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' 
 ```
@@ -67,7 +67,7 @@ Here are example requests using Node.js's `node-fetch` library:
 
 ```js
 import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/v1/getpng';
+const url = 'https://bpsapi.rajtech.me/getpng';
 const params = {url: 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'};
 
 fetch(
@@ -101,7 +101,9 @@ Here's a circular with a single page:
 {
   "status": "success",
   "http_status": 200,
-  "data": ["https://bpsapi.rajtech.me/circularpng/1146.png"]
+  "data": [
+    "https://bpsapi.rajtech.me/circular-image/1618.png"
+  ]
 }
 ```
 
@@ -116,10 +118,10 @@ Here's a circular with multiple pages:
   "status": "success",
   "http_status": 200,
   "data": [
-    "https://bpsapi.rajtech.me/circularpng/1147.png",
-    "https://bpsapi.rajtech.me/circularpng/1147-2.png",
-    "https://bpsapi.rajtech.me/circularpng/1147-3.png",
-    "https://bpsapi.rajtech.me/circularpng/1147-4.png"
+    "https://bpsapi.rajtech.me/circular-image/1147.png",
+    "https://bpsapi.rajtech.me/circular-image/1147-2.png",
+    "https://bpsapi.rajtech.me/circular-image/1147-3.png",
+    "https://bpsapi.rajtech.me/circular-image/1147-4.png"
   ]
 }
 ```
