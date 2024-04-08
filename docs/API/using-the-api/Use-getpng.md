@@ -9,6 +9,10 @@ In this tutorial, we will be using the `/getpng` endpoint to get a circular's PN
 The `/getpng` endpoint returns a dict containing the direct URL to a PNG version of a BPS Circular.
 
 
+## Request Structure
+
+Send a GET request to the following URL: `https://bpsapi.rajtech.me/getpng?url={circular_url}`
+
 #### Parameters:
 
 - `url` : `string`. A valid URL pointing to a .pdf file on the BPS website [Mandatory]
@@ -31,7 +35,7 @@ Here are example requests using Python's `requests` library:
 import requests
 
 url = "https://bpsapi.rajtech.me/getpng"
-params = {'url': 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'}
+params = {'url': 'https://bpsdoha.com/circular/category/52-academic-year-2024-25?download=1618'}
 
 request = requests.get(url, params=params)
 print(request.text)
@@ -51,7 +55,7 @@ Here is are example requests using cURL:
 
 ```bash
 curl -X 'GET' \
-  'https://bpsapi.rajtech.me/getpng?url=https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147' \
+  'https://bpsapi.rajtech.me/getpng?url=https://bpsdoha.com/circular/category/52-academic-year-2024-25?download=1618' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' 
 ```
@@ -68,7 +72,7 @@ Here are example requests using Node.js's `node-fetch` library:
 ```js
 import fetch from 'node-fetch';
 const url = 'https://bpsapi.rajtech.me/getpng';
-const params = {url: 'https://bpsdoha.com/circular/category/38-circular-ay-2022-23?download=1147'};
+const params = {url: 'https://bpsdoha.com/circular/category/52-academic-year-2024-25?download=1618'};
 
 fetch(
     `${url}?${new URLSearchParams(params)}`,

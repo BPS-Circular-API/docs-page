@@ -32,10 +32,7 @@ print(request.text)
 Here is an example request using cURL:
 
 ```bash
-curl -X 'GET' \
-  'https://bpsapi.rajtech.me/categories' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json'
+curl "https://bpsapi.rajtech.me/categories"
 ```
 
 
@@ -47,20 +44,14 @@ curl -X 'GET' \
 Here is an example request using Node.js's `node-fetch` library:
 
 ```js
-import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/categories';
+const fetch = require('node-fetch');
 
-fetch(
-    url,
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
+const url = "https://bpsapi.rajtech.me/categories";
 
-    .then( (res) => res.json())
-    .then( (res) => console.log(res));
+fetch(url)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 ```
 
 </TabItem>

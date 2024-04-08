@@ -10,21 +10,18 @@ In this tutorial, we will be using the `/latest` endpoint to get the latest circ
 This endpoint returns a JSON object containing the latest circular's information.
 
 
-#### Parameters:
-* `category` : `string` or `int`. Needs to be either one of the categories (for a list, visit https://bpsapi.rajtech.me/categories) or a BPS Category ID (int) [Mandatory]
+## Request Structure
 
-The `category` parameter refers to any one of the categories of circulars on the BPS Website. 
+Send a GET request to the following URL: `https://bpsapi.rajtech.me/latest/**{category}**`   
+or, send a GET request to: `https://bpsapi.rajtech.me/latest?category={category}` (not recommended, legacy way)
 
-The category ID can be found in the URL of the circulars page of the BPS Website, like here `https://bpsdoha.com/circular/category/52-academic-year-2024-25`, 52 is the ID
-
-Or if you want the to use one of the three main categories, you can use  as the value of the `category` parameter, instead of a numeric ID
+{category} here is either a category name (from https://bpsapi.rajtech.me/categories) or a category-id (In https://bpsdoha.com/circular/category/**52**-academic-year-2024-25, 52 is the id)
 
 ## Example Requests
 
 
 
 <Tabs>
-
 
 
 <TabItem value="python" label="Python" default>
@@ -37,10 +34,10 @@ Here is an example request using Python's `requests` library:
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/latest"
-params = {'category': 'general'}
+category = "general"
+url = f"https://bpsapi.rajtech.me/latest/{category}"
 
-request = requests.get(url, params=params)
+request = requests.get(url)
 print(request.text)
 ```
 
@@ -50,10 +47,10 @@ print(request.text)
 ```python
 import requests
 
-url = "https://bpsapi.rajtech.me/latest"
-params = {'category': '52'} # It doesn't matter if you use a string or an int as the value
+category = "52"
+url = f"https://bpsapi.rajtech.me/latest/{category}"
 
-request = requests.get(url, params=params)
+request = requests.get(url)
 print(request.text)
 ```
 
@@ -73,20 +70,14 @@ Here is an example request using cURL:
 
 
 ```bash
-curl -X 'GET' \
-  'https://bpsapi.rajtech.me/latest?category=general' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' 
+curl "https://bpsapi.rajtech.me/latest/general"
 ```
 
 </TabItem>
 <TabItem value="id" label="Category ID">
 
 ```bash
-curl -X 'GET' \
-  'https://bpsapi.rajtech.me/latest?category=52' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' 
+curl "https://bpsapi.rajtech.me/latest/52"
 ```
 
 </TabItem>
@@ -104,42 +95,30 @@ Here is an example request using Node.js's `node-fetch` library:
 <TabItem value="preset" label="Preset Category" default>
 
 ```js
-import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/latest';
-const params = {category: 'general'};
+const fetch = require('node-fetch');
 
-fetch(
-    `${url}?${new URLSearchParams(params)}`,
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
+const category = 'general';
+const url = `https://bpsapi.rajtech.me/latest/${category}`;
 
-    .then( (res) => res.json())
-    .then( (res) => console.log(res));
+fetch(url)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 ```
 
 </TabItem>
 <TabItem value="id" label="Category ID">
 
 ```js
-import fetch from 'node-fetch';
-const url = 'https://bpsapi.rajtech.me/latest';
-const params = {category: '52'};
+const fetch = require('node-fetch');
 
-fetch(
-    `${url}?${new URLSearchParams(params)}`,
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
+const category = '52';
+const url = `https://bpsapi.rajtech.me/latest/${category}`;
 
-    .then( (res) => res.json())
-    .then( (res) => console.log(res));
+fetch(url)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 ```
 
 </TabItem>

@@ -14,9 +14,16 @@ It basically uses a search algorithm to find the circular based on the keywords.
 Example: Input being `mobile`, it finds the circular `Mobile Phone Usage Policy` and returns the circular object.
 
 
+## Request Structure
+
+Send a GET request to the following URL: `https://bpsapi.rajtech.me/search/{query}?amount={amount}`   
+or, send a GET request to: `https://bpsapi.rajtech.me/search?query={query}&amount={amount}`
+
+{query} here is what you want to search for
+{amount} is the number of results you want to receive
+
 #### Parameters:
 
-- `query` : `string`. Query to search for, must contain at least 1 keyword [Mandatory]
 - `amount`: `integer`. The amount of circulars to return. Defaults to `3` [Optional]
 
 
