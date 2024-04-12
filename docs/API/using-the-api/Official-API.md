@@ -1,5 +1,5 @@
 ---
-sidebar-position: 0
+sidebar_position: -
 ---
 
 # The Official API

@@ -1,11 +1,11 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 
 # Using /categories Endpoint
 
-In this tutorial, we will be using the `/categories` endpoint to get the available primary categories
+In this tutorial, we will be using the `/categories` endpoint to get the available primary categories   
 The `/categories` endpoint returns a list containing the names of the primary categories, which can then be passed in
 as category names while using the other endpoints.
 
