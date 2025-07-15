@@ -4,137 +4,119 @@ sidebar_position: 3
 
 # The `CircularChecker` Class
 
-The `CircularChecker` class is a bit more complicated than the `API` class. It is used to check for new circulars in a category.
+The `CircularChecker` class monitors a specific category for new circulars using the BPS Circular API and stores the latest state using a customizable cache method.
 
+---
 
 ## Usage
 
-The `CircularChecker` class can be imported like this:
-
 ```python
-import pybpsapi
-checker = pybpsapi.CircularChecker(category="general")
-# or
-
 from pybpsapi import CircularChecker
+
 checker = CircularChecker(category="general")
 ```
 
-### Parameters
+---
 
+## Parameters
 
-- `category` - The category to check for new circulars. Can be a category name (general|ptm|exam) or a category ID.
-- `url` (optional) - The BPS API URL to use. Defaults to `https://bpsapi.rajtech.me/v1`.
-- `cache_method` (optional) - The method to use to cache the latest circular. Can be `None` for memory, `pickle` to use a `.pickle` file, or `database` for a local SQLITE3 Database. Defaults to `memory`.
-- `debug` (optional) - Whether to enable debug mode. This enables access to the `set_cache` and `refresh cache` methods. Defaults to `False`.
+- `category`: (str | int) — Required. The category to monitor for circulars. Can be a category name or a numeric ID.
+- `api_url`: (str) — Optional. Defaults to `"https://bpsapi.rajtech.me/"`.
+- `fallback_api_url`: (str) — Optional. Used as a backup if the primary API fails.
+- `cache_method`: (str) — One of `'pickle'`, `'sqlite'`, `'mysql'`. Determines how the last seen circular ID is cached.
+- `**kwargs`: Additional keyword arguments depending on the cache method (see below).
 
-### Keyword Arguments
+---
 
+## Cache Method Specific Arguments
 
-The following keyword arguments must be passed when using the `database` cache method.
-- `db_name` - The name of the database to use. 
-- `db_path` - The path to the database. 
-- `db_table` - The name of the table to use. 
+### For `'pickle'`:
 
-The following keyword arguments must be passed when using the `pickle` cache method.
-- `pickle_path` - The path to the pickle file.
-- `pickle_name` - The name of the pickle file.
+- `cache_file`: (str) — Path to the pickle file used for caching.
 
+### For `'sqlite'`:
 
+- `db_path`: (str) — Path to the directory where the `.db` file is stored.
+- `db_name`: (str) — Name of the database file (without extension).
+- `db_table`: (str) — Table name where cache is stored.
+
+### For `'mysql'`:
+
+- `db_name`: (str) — Name of the MySQL database.
+- `db_user`: (str) — Username.
+- `db_host`: (str) — Host address.
+- `db_port`: (int) — Port number.
+- `db_password`: (str) — Password.
+- `db_table`: (str) — Table name to store cached values.
+
+---
+
+## Examples
 
 ```python
-# Import the module
-import pybpsapi
+# Pickle cache
+checker = CircularChecker(category="general", cache_method="pickle", cache_file="cache.pickle")
 
-# A minimal instance of the CircularChecker class. Stores the cache in memory.
-checker = pybpsapi.CircularChecker(category="general")
+# SQLite cache
+checker = CircularChecker(category="general", cache_method="sqlite", db_path=".", db_name="cache", db_table="circulars")
 
-# An instance of the CircularChecker class that stores the cache in a pickle file.
-checker2 = pybpsapi.CircularChecker(category="general", cache_method="pickle", pickle_path=".", pickle_name="cache.pickle")
-
-# An instance of the CircularChecker class that stores the cache in a SQLITE3 database. The database must be created before using this, but the table will be created automatically.
-checker3 = pybpsapi.CircularChecker(category="general", cache_method="database", db_name="cache.db", db_path=".", db_table="cache")
+# MySQL cache
+checker = CircularChecker(
+    category="general", cache_method="mysql",
+    db_name="bps", db_user="root", db_host="localhost",
+    db_port=3306, db_password="secret", db_table="circulars"
+)
 ```
 
-
+---
 
 ## Methods
 
+### `check()`
 
-### 1) `check()`
-
-This method checks for new circulars in the given category. 
+Checks for new circulars since the last known one.
 
 ```python
-# Import the module
-import pybpsapi
-
-# Create an instance of the CircularChecker class
-checker = pybpsapi.CircularChecker(category="general")
-
-# Check for new circulars
 new_circulars = checker.check()
-
-print(new_circulars)
 ```
 
-It returns a `list` of new circulars, or `None` if no new circulars are found. 
+Returns a list of new circular dictionaries or an empty list if none are found. Filters out circulars from other categories if a category is set.
 
-### 2) `get_cache()`
+---
 
-This method gets you the latest cached data from the set cache method. 
+### `get_cache()`
+
+Retrieves the last cached circular ID.
 
 ```python
-# Import the module
-import pybpsapi
-
-# Create an instance of the CircularChecker class
-checker = pybpsapi.CircularChecker(category="general")
-
-# Get the current cache
-cache = checker.get_cache()
-
-print(cache)
+last_id = checker.get_cache()
 ```
 
-It returns a list of the cache data, or `None` if no cache is found.
+Returns the cached circular ID as an integer, or `None`.
 
+---
 
-### 3) `set_cache(...)`
+## Internal Method
 
-This method sets the cache of the CircularChecker instance. This method is only available when `debug` is set to `True`.
+> These are not part of the public API but useful to know for contributors.
 
-#### Parameters
-- The `data` parameter is the actual data to set as the cache.   
-- The `title` parameter is the title of the circular list. This is only used when using the `database` cache method. Defaults to `circular_list`.
+### `_set_cache(circular_id)`
 
+Sets the cached circular ID to a new value.
 
 ```python
-# Import the module
-import pybpsapi
-
-# Create an instance of the CircularChecker class
-checker = pybpsapi.CircularChecker(category="general", debug=True)
-
-# Set the cache
-checker.set_cache(data={...})
+checker._set_cache(12345)
 ```
 
-It returns None.
+---
 
-### 4) `refresh_cache()`
+## CircularCheckerGroup
 
-This method refreshes the cache of the CircularChecker instance. This method is only available when `debug` is set to `True`.
+A helper class to manage multiple `CircularChecker` instances.
+
+### Usage
 
 ```python
-# Import the module
-import pybpsapi
-
-# Create an instance of the CircularChecker class
-checker = pybpsapi.CircularChecker(category="general", debug=True)
-
-# Refresh the cache
-checker.refresh_cache()
+group = CircularCheckerGroup(checker1, checker2)
+results = group.check()
 ```
-
-It returns None.

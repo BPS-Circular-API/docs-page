@@ -20,7 +20,7 @@ And it's done! You can now use the package in your Python scripts.
 
 ## Usage
 
-The package is very simple to use. It has only two classes, `API` and `CircularChecker`. 
+The package is very simple to use. It has only three classes, `API`, `CircularChecker` and `CircularCheckerGroup` 
 
 It can be imported like this:
 
@@ -28,7 +28,7 @@ It can be imported like this:
 import pybpsapi
 
 # or
-from pybpsapi import API, CircularChecker
+from pybpsapi import API, CircularChecker, CircularCheckerGroup
 ```
 
 ---

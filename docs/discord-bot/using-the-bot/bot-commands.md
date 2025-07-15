@@ -35,4 +35,4 @@ Server administrator commands start with `/circular admin`.
 `/circular admin delete`: Stop notifying in the channel when a new circular is posted.
 
 -----
-Thanks for reading, if you have any questions feel free to contact me on Discord: `@rajdave`
+Thanks for reading

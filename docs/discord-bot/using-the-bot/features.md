@@ -72,21 +72,21 @@ Searching for `1003` (the circular ID) will return the following result:
 </Tabs>
 
 
-## Automatic Reminders
+## Automatic Notifications
 
-The bot will automatically send a reminder to the set channel or User DMs every time a new circular is posted to the BPS Website.
+The bot will automatically send a notification to the set channel or User DMs every time a new circular is posted to the BPS Website.
 
 <Tabs>
 <TabItem value="channel" label="Channel" default>
 
-Here, the bot has been set up to remind in the `#circulars` channel, with `/circular admin setup`
+Here, the bot has been set up to notify in the `#circulars` channel, with `/circular admin setup`
 
 ![](/img/circular-remind-channel.png)
 
 </TabItem>
 <TabItem value="dms" label="DM">
 
-Here, the bot has been set up to remind you with in a DM with `/circular remindme`
+Here, the bot has been set up to notify you with in a DM with `/circular notifyme`
 
 ![](/img/circular-remind-dm.png)
 
@@ -95,7 +95,7 @@ Here, the bot has been set up to remind you with in a DM with `/circular remindm
 
 ---
 
-Thanks for reading, if you have any questions feel free to contact me on Discord: `@rajdave`
+Thanks for reading
 
 import Tabs			from "@theme/Tabs";
 import TabItem		from "@theme/TabItem";

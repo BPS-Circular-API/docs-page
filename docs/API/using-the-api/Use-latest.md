@@ -12,7 +12,7 @@ This endpoint returns a JSON object containing the latest circular's information
 
 ## Request Structure
 
-Send a GET request to the following URL: `https://bpsapi.rajtech.me/latest/**{category}**`   
+Send a GET request to the following URL: `https://bpsapi.rajtech.me/latest/{category}`   
 or, send a GET request to: `https://bpsapi.rajtech.me/latest?category={category}` (not recommended, legacy way)
 
 {category} here is either a category name (from https://bpsapi.rajtech.me/categories) or a category-id (In https://bpsdoha.com/circular/category/**52**-academic-year-2024-25, 52 is the id)
