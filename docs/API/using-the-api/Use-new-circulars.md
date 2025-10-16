@@ -2,11 +2,10 @@
 sidebar_position: 5
 ---
 
-# Using /getpng Endpoint
+# Using /new-circulars Endpoint
 
-In this tutorial, we will be using the `/new-circulars` endpoint to get a circular's PNG file.
+In this tutorial, we will be using the `/new-circulars` endpoint to implement a new circular checking system.
 
-The `/getpng` endpoint returns a list of circulars posted with their circular ids greater than the provided circular ID
 
 ## Request Structure
 
